@@ -1,0 +1,83 @@
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 100%;
+}
+
+// Buttons
+.btn {
+    padding: 14px 25px;
+    border-radius: 7px;
+    display: inline-block;
+    width: 100%;
+    transition: all .15s ease-in;
+    font-weight: $bold-weight;
+    text-align: center;
+
+    &-primary {
+        background: $primary-color;
+        color: #fff;
+        &:hover {
+            background: $primary-color-hover;
+            box-shadow: $light-shadow;
+        }
+    }
+    &-transparent {
+        background: none;
+        border: 1px solid rgba(16, 29, 125, 0.5);
+        &:hover {
+            background: $light-purple;
+            box-shadow: inset 0 0 20px rgba($color: #9298cc, $alpha: .4);
+        }
+    }
+    &.delete-btn {
+        padding: 0;
+        border-radius: 0;
+        color: rgb(109, 109, 109);
+
+        &:hover {
+            color: rgb(73, 73, 73);
+        }
+    }
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], textarea {
+    border: none;
+    padding-left: 20px;
+    height: 45px;
+    color: $dark-gray-hover;
+    font-size: 14px;
+    font-weight: 600;
+
+    &:focus {
+        outline: none;
+        color: $dark-gray;
+    }
+}
+
+.text-hover:hover {
+    color: $primary-color;
+}
+
+#bills-card {background: rgb(255, 99, 132);}
+#groceries-card {background: rgb(54, 162, 235);}
+#entertainment-card {background: rgb(255, 168, 81);}
+#wellbeing-card {background: rgb(75, 192, 192);}
+#snacks-card {background: rgb(255, 159, 64);}
+#clothes-card {background: rgb(153, 102, 255);}
+#transport-card {background: $primary-color;}
+#other-card {background: rgb(175, 175, 175);}
+
+.section-header {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: .5rem;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track your expenses</title>
+
+    <!-- Satoshi Font -->
+    <link href="https://api.fontshare.com/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml">
+
+</head>
+<body id="dashboard" class="main-body">
+    <nav class="navbar">
+        <div class="nav-wrap">
+            <h1>John Smith</h1>
+            <ul class="nav-collection">
+                <li class="nav-items" onclick="location.href='index.html';">
+                    <div class="nav-icon"><i class="fa-solid fa-house"></i></div>
+                    <a href="index.html">Dashboard</a>
+                </li>
+                <li class="nav-items" onclick="location.href='add.html';">
+                    <div class="nav-icon"><i class="fa-solid fa-plus"></i></i></div>
+                    <a href="add.html">Add</a>
+                </li>
+                <li class="nav-items" onclick="location.href='reports.html';">
+                    <div class="nav-icon"><i class="fa-solid fa-chart-column"></i></i></div>
+                    <a href="reports.html">Reports</a>
+                </li>
+                <li class="nav-items" onclick="location.href='history.html';">
+                    <div class="nav-icon"><i class="fa-solid fa-clock-rotate-left"></i></i></div>
+                    <a href="history.html">History</a>
+                </li>
+                <li class="nav-items" onclick="location.href='profile.html';">
+                    <div class="nav-icon"><i class="fa-solid fa-user"></i></div>
+                    <a href="profile.html">Profile</a>
+                </li>
+            </ul>
+            <a href="login.html" class="btn btn-transparent" id="logout"><i class="fa-solid fa-power-off"></i> Log out</a>
+        </div>
+    </nav>
+
+    <main id="dashboard-page" class="main">
+        <section id="dashboard-text">
+            <h1 class="header">Hello, John</h1>
+            <p class="subheader">This is the easiest way to track your expenses</p>
+            <div class="canvas">
+                <canvas id="myChart" width="100" height="100"></canvas>
+                <div class="total-chart">
+                    <h2 class="total-text">Total</h2>
+                    <p class="total-amout">1234€</p>
+                </div>
+                <p class="small-text">*This month</p>
+                <a href="add.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add an expense</a>
+            </div>
+        </section>
+
+        <section id="dashboard-cards">
+            <div class="categories-wrap">
+                <p class="section-header">Categories</p>
+                <div class="row">
+                    <div class="category-card" id="bills-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <h4>Bills</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                    <div class="category-card" id="groceries-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            <h4>Groceries</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                    <div class="category-card" id="entertainment-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-film"></i>
+                            <h4>Entertainment</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                    <div class="category-card" id="wellbeing-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-staff-aesculapius"></i>
+                            <h4>Wellbeing</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="category-card" id="snacks-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-burger"></i>
+                            <h4>Snacks</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                    <div class="category-card" id="clothes-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-shirt"></i>
+                            <h4>Clothes</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                    <div class="category-card" id="transport-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-bus"></i>
+                            <h4>Transport</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                    <div class="category-card" id="other-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-universal-access"></i>
+                            <h4>Other</h4>
+                        </div>
+                        <div class="card-info"><p>1234€</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="section-header">Expenses</p>
+            <div class="expenses-table-wrap">
+                <table class="expenses">
+                    <thead>
+                        <tr class="table-head">
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-bus"></i> Transport</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"> <i class="fa-solid fa-file-invoice-dollar"></i> Bills</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-basket-shopping"></i> Groceries</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-shirt"></i> Clothes</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-burger"></i> Snacks</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-staff-aesculapius"></i> Wellbeing</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-film"></i> Entertainment</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-shirt"></i> Clothes</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                        <tr>
+                            <td class="expense-name">Test</td>
+                            <td class="expense-cat"><i class="fa-solid fa-basket-shopping"></i> Groceries</td>
+                            <td class="expense-date">01/02/22</td>
+                            <td class="expense-price">123€</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js" integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Bills','Groceries','Entertainment', 'Wellbeing','Snacks','Clothes'],
+                datasets: [{
+                    label: 'My First Dataset',
+                    data: [300, 150, 100, 90, 60, 45],
+                    backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(255, 159, 64)',
+                    'rgb(153, 102, 255)'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                cutout: 120,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        layout: {
+                            padding: 100
+                        }
+                    }
+                }
+            }
+        });
+        </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+// Colors
+$background-color-dark: #12141d;
+$background-color-light: #f6f7fb;
+
+$primary-color: rgb(68, 90, 247);
+$primary-color-hover: #324aff;
+
+$secondary-color: rgb(255, 113, 91);
+$secondary-color-hover: #ff5e45;
+
+$highlight-color: rgb(255, 194, 0);
+
+$dark-gray: #1e2028;
+$dark-gray-hover: #6f7072;
+$light-gray: rgb(152, 152, 152);
+
+$dark-purple: rgb(16, 29, 125);
+$light-purple: #dfe1f3;
+$light-blue: #cbd1f1;
+
+$chalk-black: #020202;
+
+// Categories
+$bills-color: rgb(255, 99, 132);
+$groceries-color: rgb(54, 162, 235);
+$entertainment-color: rgb(255, 168, 81);
+$wellbeing-color: rgb(75, 192, 192);
+$snacks-color: rgb(255, 159, 64);
+$clothes-color: rgb(153, 102, 255);
+$transport-color: $primary-color;
+$other-color: rgb(175, 175, 175);
+
+// Font
+$main-font: 'Satoshi', sans-serif;
+$medium-weight: 500;
+$bold-weight: 700;
+$bolder-weight: 900;
+
+// Shadow
+$light-shadow: 5px 5px 20px 0px rgba(119, 119, 119, 0.25);
+$hard-shadow: 5px 5px 20px 0px rgba(119, 119, 119, 0.5);
